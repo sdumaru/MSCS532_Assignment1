@@ -9,6 +9,8 @@ def insertion_sort(array):
         j = i - 1                           # index before the key element for easier comparison
         while j >= 0 and array[j] < key:    # keeps the loop running until the elements in the array before key element runs out 
                                             # and until an element is found which is in bigger value than key element
+                                            # array[j] < key will result in decreasing order
+                                            # array[j] > key will result in increasing order
             array[j+1] = array[j]           # move the element one position right if it is smaller in value than the key element
             j = j - 1                       # reduce the index to keep comparing the value until it reached the first element in array
         array[j+1] = key                    # once a bigger value element than the key element is found, the while loop breaks and
@@ -24,7 +26,7 @@ array_size = int(input("Enter the size of array: "))
 # Take inputs from the user for the list of numbers
 print("Enter the number you want in the array: ")
 for index in range(array_size):
-    inputted_number = input(str(index + 1) + ". ")
+    inputted_number = int(input(str(index + 1) + ". "))
     unsorted_list.append(inputted_number)
 
 print("List of numbers provided: ")
